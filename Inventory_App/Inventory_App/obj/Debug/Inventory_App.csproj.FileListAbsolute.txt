@@ -1,0 +1,13 @@
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\bin\Debug\Inventory_App.exe.config
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\bin\Debug\Inventory_App.exe
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\bin\Debug\Inventory_App.pdb
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\bin\Debug\Guna.UI.dll
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.csprojAssemblyReference.cache
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.Form1.resources
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.Loading.resources
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.Properties.Resources.resources
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.csproj.GenerateResource.cache
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.csproj.CoreCompileInputs.cache
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.csproj.CopyComplete
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.exe
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.pdb

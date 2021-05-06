@@ -11,3 +11,6 @@ C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\
 C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.csproj.CopyComplete
 C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.exe
 C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.pdb
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.CashierForm.resources
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.CategoryForm.resources
+C:\Users\wadef\Desktop\Final_Year\Semester_Six\Server_Programming\Final_Project\C-sharp_Sever_Programming\Inventory_App\Inventory_App\obj\Debug\Inventory_App.ProductForm.resources

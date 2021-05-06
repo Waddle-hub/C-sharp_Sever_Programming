@@ -45,8 +45,8 @@ namespace Inventory_App
             DataTable dt = new DataTable();
             dt.Columns.Add("catName", typeof(string));
             dt.Load(rdr);
-            catCmb.ValueMember = "catName";
-            catCmb.DataSource = dt;
+            prodCmb.ValueMember = "catName";
+            prodCmb.DataSource = dt;
             connect.Close();
         }
 
@@ -67,13 +67,72 @@ namespace Inventory_App
             try
             {
                 connect.Open();
-                string query = "instert into productTbl values(" + prodId.Text + ",'" + prodName.Text + "'," + prodQuantity.Text + ", "+prodPrice.Text +","+catCmb.SelectedValue.ToString()+")";
+                string query = "instert into productTbl values(" + prodId.Text + ",'" + prodName.Text + "'," + prodQuantity.Text + ", "+prodPrice.Text +","+prodCmb.SelectedValue.ToString()+");";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Product Added Successfully");
                 populate();
                 connect.Close();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void prodDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            prodId.Text = prodDGV.SelectedRows[0].Cells[0].Value.ToString();
+            prodName.Text = prodDGV.SelectedRows[0].Cells[1].Value.ToString();
+            prodQuantity.Text = prodDGV.SelectedRows[0].Cells[2].Value.ToString();
+            prodPrice.Text = prodDGV.SelectedRows[0].Cells[3].Value.ToString();
+            prodCmb.SelectedValue = prodDGV.SelectedRows[0].Cells[4].Value.ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (prodId.Text == String.Empty)
+                {
+                    MessageBox.Show("Please select a product to delete");
+                }
+                else
+                {
+                    connect.Open();
+                    string query = "delete from productTbl where prodId=" + prodId.Text + ";";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product deleted");
+                    connect.Close();
+                    populate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (prodId.Text == String.Empty || prodName.Text == String.Empty || prodPrice.Text == String.Empty || prodQuantity.Text == String.Empty)
+                {
+                    MessageBox.Show("Please fill in all the fields before editing");
+                }
+                else
+                {
+                    connect.Open();
+                    string query = "update productTbl set prodName='" + prodName.Text + "', prodPrice=" + prodPrice.Text + ", prodCat='"+prodCmb.SelectedValue.ToString()+"' where prodId=" + prodId.Text + ";";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product has been edited");
+                    connect.Close();
+                    populate();
+                }
             }
             catch (Exception ex)
             {

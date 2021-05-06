@@ -47,6 +47,7 @@ namespace Inventory_App
             CatDGV.DataSource = ds.Tables[0];
             connect.Close();
         }
+
         private void CategoryForm_Load(object sender, EventArgs e)
         {
             populate();

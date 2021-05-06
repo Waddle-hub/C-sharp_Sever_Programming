@@ -31,13 +31,13 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.back_Circle = new Guna.UI.WinForms.GunaCircleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.userPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.roleCMB = new System.Windows.Forms.ComboBox();
             this.submit_Login = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,14 +77,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage ease";
             // 
-            // textBox1
+            // userName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox1.Location = new System.Drawing.Point(531, 382);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 40);
-            this.textBox1.TabIndex = 2;
+            this.userName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.userName.Location = new System.Drawing.Point(531, 382);
+            this.userName.Multiline = true;
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(221, 40);
+            this.userName.TabIndex = 2;
             // 
             // label2
             // 
@@ -110,14 +110,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
             // 
-            // textBox2
+            // userPass
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox2.Location = new System.Drawing.Point(531, 272);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 40);
-            this.textBox2.TabIndex = 4;
+            this.userPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.userPass.Location = new System.Drawing.Point(531, 272);
+            this.userPass.Multiline = true;
+            this.userPass.Name = "userPass";
+            this.userPass.Size = new System.Drawing.Size(221, 40);
+            this.userPass.TabIndex = 4;
             // 
             // label4
             // 
@@ -154,20 +154,20 @@
             this.gunaCircleButton1.Size = new System.Drawing.Size(454, 258);
             this.gunaCircleButton1.TabIndex = 7;
             // 
-            // comboBox1
+            // roleCMB
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.comboBox1.Font = new System.Drawing.Font("Reem Kufi", 9F, System.Drawing.FontStyle.Italic);
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ADMIN",
-            "CASHIER"});
-            this.comboBox1.Location = new System.Drawing.Point(531, 174);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 36);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "Select Role";
+            this.roleCMB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.roleCMB.Font = new System.Drawing.Font("Reem Kufi", 9F, System.Drawing.FontStyle.Italic);
+            this.roleCMB.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.roleCMB.FormattingEnabled = true;
+            this.roleCMB.Items.AddRange(new object[] {
+            "Admin",
+            "Cashier"});
+            this.roleCMB.Location = new System.Drawing.Point(531, 174);
+            this.roleCMB.Name = "roleCMB";
+            this.roleCMB.Size = new System.Drawing.Size(220, 36);
+            this.roleCMB.TabIndex = 8;
+            this.roleCMB.Text = "Select Role";
             // 
             // submit_Login
             // 
@@ -180,6 +180,7 @@
             this.submit_Login.TabIndex = 9;
             this.submit_Login.Text = "Submit";
             this.submit_Login.UseVisualStyleBackColor = false;
+            this.submit_Login.Click += new System.EventHandler(this.submit_Login_Click);
             // 
             // label5
             // 
@@ -189,9 +190,10 @@
             this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label5.Location = new System.Drawing.Point(758, 397);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 25);
+            this.label5.Size = new System.Drawing.Size(51, 27);
             this.label5.TabIndex = 10;
             this.label5.Text = "Clear";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -215,15 +217,15 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.submit_Login);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.roleCMB);
             this.Controls.Add(this.gunaCircleButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.back_Circle);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.userPass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -238,13 +240,13 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Guna.UI.WinForms.GunaCircleButton back_Circle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox userPass;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox roleCMB;
         private System.Windows.Forms.Button submit_Login;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

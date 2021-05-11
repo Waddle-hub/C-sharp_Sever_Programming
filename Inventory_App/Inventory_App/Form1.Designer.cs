@@ -64,6 +64,7 @@
             this.back_Circle.OnPressedColor = System.Drawing.Color.Black;
             this.back_Circle.Size = new System.Drawing.Size(1014, 544);
             this.back_Circle.TabIndex = 0;
+            this.back_Circle.Click += new System.EventHandler(this.back_Circle_Click);
             // 
             // label1
             // 
@@ -118,6 +119,7 @@
             this.userPass.Name = "userPass";
             this.userPass.Size = new System.Drawing.Size(221, 40);
             this.userPass.TabIndex = 4;
+            this.userPass.UseSystemPasswordChar = true;
             // 
             // label4
             // 

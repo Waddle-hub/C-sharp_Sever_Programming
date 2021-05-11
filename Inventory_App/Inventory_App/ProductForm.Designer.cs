@@ -102,6 +102,7 @@
             this.comboBox2.Size = new System.Drawing.Size(222, 24);
             this.comboBox2.TabIndex = 18;
             this.comboBox2.Text = "Select a category";
+            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             // 
             // prodDGV
             // 
@@ -207,6 +208,7 @@
             this.prodCmb.Size = new System.Drawing.Size(222, 24);
             this.prodCmb.TabIndex = 13;
             this.prodCmb.Text = "Select a category";
+            this.prodCmb.SelectionChangeCommitted += new System.EventHandler(this.prodCmb_SelectionChangeCommitted);
             // 
             // prodPrice
             // 
@@ -304,6 +306,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Cashier";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -327,6 +330,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Sales";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button5
             // 

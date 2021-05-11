@@ -26,12 +26,12 @@ namespace Inventory_App
             InitializeComponent();
         }
 
-        SqlConnection connect = new SqlConnection(@"");
+        SqlConnection connect = new SqlConnection(@"Server=193.225.33.22; Database=PZ7SK0_2021; user=RE1D25;Password=szelektcsillag");
 
         private void populate()
         {
             connect.Open();
-            string query = "select * from categoryTbl";
+            string query = "select * from cashierTbl";
             SqlDataAdapter sda = new SqlDataAdapter(query, connect);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -97,12 +97,12 @@ namespace Inventory_App
             try
             {
                 connect.Open();
-                string query = "instert into cashierTbl values(" + cashId.Text + ",'" + cashName.Text + "'," + cashAge.Text + ", '" + cashPhone.Text + "','" + cashPassword + "');";
+                string query = "insert into cashierTbl values(" + cashId.Text + ",'" + cashName.Text + "'," + cashAge.Text + ", '" + cashPhone.Text + "','" + cashPassword.Text + "');";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cashier Added Successfully");
-                populate();
                 connect.Close();
+                populate();
                 clearTextBoxes();
 
             }
@@ -123,12 +123,11 @@ namespace Inventory_App
                 else
                 {
                     connect.Open();
-                    string query = "update cashierTbl set cashName='" + cashName.Text + "', cashAge=" + cashAge.Text + ", cashPhone='" + cashPhone.Text + "', cashPassword='"+cashPassword.Text+"' where cashId ="+ cashId.Text + ";";
+                    string query = "update cashierTbl set cashName='" + cashName.Text + "', cashAge=" + cashAge.Text + ", cashPhone='" + cashPhone.Text + "', cashPass='" + cashPassword.Text + "' where cashId =" + cashId.Text + ";";
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Cashier has been edited");
                     connect.Close();
-                    populate();
                     clearTextBoxes();
                 }
             }
@@ -136,6 +135,11 @@ namespace Inventory_App
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

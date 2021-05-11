@@ -17,19 +17,19 @@ namespace Inventory_App
         {
             InitializeComponent();
         }
-        SqlConnection connect = new SqlConnection(@"");
+        SqlConnection connect = new SqlConnection(@"Server=193.225.33.22; Database=PZ7SK0_2021; user=RE1D25;Password=szelektcsillag");
 
         private void addCat_Click(object sender, EventArgs e)
         {
             try
             {
                 connect.Open();
-                string query = "instert into categoryTbl values(" + catID.Text + ",'" + catName.Text + "','" + catDesc.Text + "')";
+                string query = "insert into categoryTbl values(" + catID.Text + ",'" + catName.Text + "','" + catDesc.Text + "')";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Category Added Successfully");
-                populate();
                 connect.Close();
+                populate();
 
             }catch(Exception ex)
             {
@@ -111,6 +111,13 @@ namespace Inventory_App
             ProductForm product = new ProductForm();
             this.Hide();
             product.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CashierPOS pos = new CashierPOS();
+            this.Hide();
+            pos.Show();
         }
     }
 }

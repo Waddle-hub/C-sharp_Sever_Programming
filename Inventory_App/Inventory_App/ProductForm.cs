@@ -18,12 +18,12 @@ namespace Inventory_App
             InitializeComponent();
         }
 
-        SqlConnection connect = new SqlConnection(@"");
+        SqlConnection connect = new SqlConnection(@"Server=193.225.33.22; Database=PZ7SK0_2021; user=RE1D25;Password=szelektcsillag");
 
         private void populate()
         {
             connect.Open();
-            string query = "select * from categoryTbl";
+            string query = "select * from productTbl";
             SqlDataAdapter sda = new SqlDataAdapter(query, connect);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -36,6 +36,7 @@ namespace Inventory_App
         {
             Application.Exit();
         }
+
         private void fillComboBox()
         {
             connect.Open();
@@ -52,7 +53,8 @@ namespace Inventory_App
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-
+            populate();
+            fillComboBox();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,12 +69,12 @@ namespace Inventory_App
             try
             {
                 connect.Open();
-                string query = "instert into productTbl values(" + prodId.Text + ",'" + prodName.Text + "'," + prodQuantity.Text + ", "+prodPrice.Text +","+prodCmb.SelectedValue.ToString()+");";
+                string query = "insert into productTbl values(" + prodId.Text + ",'" + prodName.Text + "'," + prodQuantity.Text + ", "+prodPrice.Text +",'"+prodCmb.SelectedValue.ToString()+"');";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Product Added Successfully");
-                populate();
                 connect.Close();
+                populate();
 
             }
             catch (Exception ex)
@@ -126,7 +128,7 @@ namespace Inventory_App
                 else
                 {
                     connect.Open();
-                    string query = "update productTbl set prodName='" + prodName.Text + "', prodPrice=" + prodPrice.Text + ", prodCat='"+prodCmb.SelectedValue.ToString()+"' where prodId=" + prodId.Text + ";";
+                    string query = "update productTbl set prodName='" + prodName.Text + "', prodPrice=" + prodPrice.Text + ", prodQuantity=" + prodQuantity.Text + " ,prodCat='"+prodCmb.SelectedValue.ToString()+"' where prodId=" + prodId.Text + ";";
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product has been edited");
@@ -138,6 +140,37 @@ namespace Inventory_App
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void prodCmb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            connect.Open();
+            string query = "select * from productTbl where prodCat='" + prodCmb.SelectedValue.ToString() + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, connect);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            prodDGV.DataSource = ds.Tables[0];
+            connect.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CashierForm cash = new CashierForm();
+            cash.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CashierPOS pOS = new CashierPOS();
+            pOS.Show();
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
         }
     }
 }

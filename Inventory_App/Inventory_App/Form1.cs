@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Inventory_App
@@ -16,6 +17,8 @@ namespace Inventory_App
         {
             InitializeComponent();
         }
+        public static string CashName = "";
+        SqlConnection connect = new SqlConnection(@"Server=193.225.33.22; Database=PZ7SK0_2021; user=RE1D25;Password=szelektcsillag");
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -53,7 +56,22 @@ namespace Inventory_App
                     }
                     else if (roleCMB.SelectedItem.ToString() == "Cashier")
                     {
-                        MessageBox.Show("You are a cashier");
+                        connect.Open();
+                        SqlDataAdapter sda = new SqlDataAdapter("Select count(8) from cashierTbl where cashName='"+userName.Text+"' and cashPass='"+userPass.Text+"'", connect);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        if (dt.Rows[0][0].ToString() == "1")
+                        {
+                            CashierPOS cash = new CashierPOS();
+                            this.Hide();
+                            CashName = userName.Text;
+                            cash.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching account");
+                        }
+                        connect.Close();
                     }
                 }
                 else
@@ -61,6 +79,11 @@ namespace Inventory_App
                     MessageBox.Show("Please select a role");
                 }
             }
+        }
+
+        private void back_Circle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
